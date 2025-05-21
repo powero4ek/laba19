@@ -86,7 +86,7 @@ class Tie extends Cloth implements manCloth{
 }
 
 class Atelier {
-    public void dressManCloth(Cloth[] clothes) {
+    public static void dressManCloth(Cloth[] clothes) {
         System.out.println("Мужская одежда");
         for (Cloth item : clothes) {
             if (item instanceof manCloth) {
@@ -95,7 +95,7 @@ class Atelier {
         }
     }
 
-    public void dressWomanCloth(Cloth[] clothes) {
+    public static void dressWomanCloth(Cloth[] clothes) {
         System.out.println("Мужская одежда");
         for (Cloth item : clothes) {
             if (item instanceof womanCloth) {
@@ -113,8 +113,7 @@ public class Main {
                 new Skirt(Sizes.XS, 790, "Черная"),
                 new Tie(Sizes.L, 490, "Серый")
         };
-        Atelier atelier = new Atelier();
-        atelier.dressWomanCloth(clothes);
-        atelier.dressManCloth(clothes);
+        Atelier.dressWomanCloth(clothes);
+        Atelier.dressManCloth(clothes);
     }
 }
